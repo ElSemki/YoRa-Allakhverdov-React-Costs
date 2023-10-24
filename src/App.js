@@ -39,7 +39,7 @@ const App = () => {
 	const [costs, setCosts] = useState(INITIAL_COSTS);
 	const [selectedYear, setSelectedYear] = useState('2023');
 
-	const addCostHandler = cost => setCosts([cost, ...costs]);
+	const addCostHandler = cost => setCosts([...costs, cost]);
 	const changeYearHandler = year => setSelectedYear(year);
 
 	const printCosts = costs

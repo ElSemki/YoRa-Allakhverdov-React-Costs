@@ -28,6 +28,7 @@ const CostForm = ({ onAddCost, onShowForm }) => {
 						onChange={evt => inputChangeHandler(evt, 'name')}
 						type="text"
 						value={data.name}
+						required
 					/>
 				</div>
 				<div className="new-cost__control">
@@ -38,6 +39,7 @@ const CostForm = ({ onAddCost, onShowForm }) => {
 						value={data.sum}
 						min="0.01"
 						step="0.01"
+						required
 					/>
 				</div>
 				<div className="new-cost__control">
@@ -48,6 +50,7 @@ const CostForm = ({ onAddCost, onShowForm }) => {
 						value={data.date}
 						min="2022-01-01"
 						max="2023-12-31"
+						required
 					/>
 				</div>
 				<div className="new-cost__actions">
