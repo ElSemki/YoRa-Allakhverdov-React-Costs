@@ -42,9 +42,10 @@ const App = () => {
 	const addCostHandler = cost => setCosts([cost, ...costs]);
 	const changeYearHandler = year => setSelectedYear(year);
 
-	const printCosts = costs.filter(
-		cost => cost.date.getFullYear().toString() === selectedYear
-	);
+	const printCosts = costs
+		.slice()
+		.sort((a, b) => b.date.getMonth() - a.date.getMonth())
+		.filter(cost => cost.date.getFullYear().toString() === selectedYear);
 
 	return (
 		<div>
