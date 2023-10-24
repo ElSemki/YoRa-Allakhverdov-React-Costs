@@ -16,26 +16,30 @@ const CostForm = ({ onAddCost, onShowForm }) => {
 		onShowForm(false);
 	};
 
-	const inputChangeHandler = (evt, name) =>
-		setData({ ...data, [name]: evt.target.value });
+	const inputChangeHandler = evt =>
+		setData({ ...data, [evt.target.name]: evt.target.value });
 
 	return (
 		<form onSubmit={formSubmitHandler}>
 			<div className="new-cost__controls">
 				<div className="new-cost__control">
-					<label>Название</label>
+					<label htmlFor="name">Название</label>
 					<input
-						onChange={evt => inputChangeHandler(evt, 'name')}
+						onChange={inputChangeHandler}
+						id="name"
 						type="text"
+						name="name"
 						value={data.name}
 						required
 					/>
 				</div>
 				<div className="new-cost__control">
-					<label>Сумма</label>
+					<label htmlFor="sum">Сумма</label>
 					<input
-						onChange={evt => inputChangeHandler(evt, 'sum')}
+						onChange={inputChangeHandler}
+						id="sum"
 						type="text"
+						name="sum"
 						value={data.sum}
 						min="0.01"
 						step="0.01"
@@ -43,10 +47,12 @@ const CostForm = ({ onAddCost, onShowForm }) => {
 					/>
 				</div>
 				<div className="new-cost__control">
-					<label>Дата</label>
+					<label htmlFor="date">Дата</label>
 					<input
-						onChange={evt => inputChangeHandler(evt, 'date')}
+						onChange={inputChangeHandler}
+						id="date"
 						type="date"
+						name="date"
 						value={data.date}
 						min="2022-01-01"
 						max="2023-12-31"
